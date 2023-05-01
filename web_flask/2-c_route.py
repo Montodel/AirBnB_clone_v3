@@ -1,28 +1,50 @@
 #!/usr/bin/python3
 """
-starts a Flask web application
+A script that starts a Flask web application
+Requirements:
+web application must be listening on 0.0.0.0, port 5000
+Routes:
+/: displays “Hello HBNB!”
+/hbnb: displays “HBNB”
+/c/<text>: displays “C ” followed by the value of the text variable
+    (replace underscore _ symbols with a space)
+must use the option strict_slashes=False in your route definition
 """
 
-from flask import Flask
-app = Flask(__name__)
+from flask import Flask as flask
+
+app = flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def index():
-    """returns Hello HBNB!"""
-    return 'Hello HBNB!'
+def hello_hbnb():
+    """
+    Route:
+    /: displays 'Hello HBNB!'
+    """
+    return ('Hello HBNB!')
 
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """returns HBNB"""
-    return 'HBNB'
+    """
+    Route:
+    /hbnb: displays “HBNB”
+    """
+    return ('HBNB')
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def cisfun(text):
-    """display “C ” followed by the value of the text variable"""
-    return 'C ' + text.replace('_', ' ')
+def c_is(text):
+    """
+    Route:
+    /c/<text>: displays “C ” followed by the value of the text variable
+        (replace underscore _ symbols with a space )
+    """
+    text = text.replace("_", " ")
+    response = "C {}".format(text)
+    return (response)
+
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run()
