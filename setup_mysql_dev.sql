@@ -1,4 +1,4 @@
--- Script that prepares a MySQL server for the project
+-- This Script prepares a MySQL server for the project
 -- create project developement database with the name : hbnb_dev_db
 CREATE DATABASE IF NOT EXISTS hbnb_dev_db;
 -- creating new user named : hbnb_dev with all privileges on the db hbnb_dev_db
