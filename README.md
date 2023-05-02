@@ -153,7 +153,7 @@ No known bugs at this time.
 ###### Version 3
 
 - Suleiman Ahmed <suleimanmoha120@gmail.com>
-- 
+- Eric Munyi <irerieric@gmail.com> 
 
 ###### Version 2
 
